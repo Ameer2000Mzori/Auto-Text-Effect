@@ -6,7 +6,7 @@ var textEl = "WE LOVE PROGRAMMING";
 var speed = 100;
 var index = 0;
 var isReversing = false;
-// our functions
+// our auto writeText functions
 var writeText = function () {
     if (!isReversing) {
         titleText.innerText = textEl.slice(0, index);
@@ -26,12 +26,16 @@ var writeText = function () {
     }
     setTimeout(writeText, speed);
 };
-// our event linsters
-inputNum.addEventListener("change", function (e) {
+// our change speed function
+var changeSpeed = function (e) {
     var newSpeed = 0;
-    console.log(newSpeed);
-    console.log(e.target.value);
-    newSpeed = e.target.value;
+    if (inputNum instanceof HTMLInputElement) {
+        newSpeed = parseInt(inputNum.value, 10);
+    }
     speed = newSpeed * 100;
-});
+    console.log(speed);
+};
+// our event linsters
+inputNum.addEventListener("change", function (e) { return changeSpeed(e); });
+// when the website is loaded
 writeText();

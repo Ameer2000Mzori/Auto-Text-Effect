@@ -1,15 +1,15 @@
 // our selected elements
 let titleText: any = document.getElementsByClassName("title-Text")[0];
-let inputNum = document.getElementsByClassName("input-Num")[0];
+let inputNum = document.getElementsByClassName("input-Num")[0] as HTMLElement;
 
 // our gelobal varibales
 let textEl: string = `WE LOVE PROGRAMMING`;
-var speed: any = 100;
-let index = 0;
-let isReversing = false;
+let speed: number = 100;
+let index: number = 0;
+let isReversing: boolean = false;
 
-// our functions
-const writeText = () => {
+// our auto writeText functions
+const writeText = (): void => {
   if (!isReversing) {
     titleText.innerText = textEl.slice(0, index);
     index++;
@@ -30,13 +30,18 @@ const writeText = () => {
   setTimeout(writeText, speed);
 };
 
-// our event linsters
-inputNum.addEventListener("change", (e: any) => {
-  let newSpeed = 0;
-  console.log(newSpeed);
-  console.log(e.target.value);
-  newSpeed = e.target.value;
+// our change speed function
+const changeSpeed = (e: Event): void => {
+  let newSpeed: number = 0;
+  if (inputNum instanceof HTMLInputElement) {
+    newSpeed = parseInt(inputNum.value, 10);
+  }
   speed = newSpeed * 100;
-});
+  console.log(speed);
+};
 
+// our event linsters
+inputNum.addEventListener("change", (e: Event) => changeSpeed(e));
+
+// when the website is loaded
 writeText();
