@@ -1,10 +1,15 @@
+// our selected elements
 let titleText: any = document.getElementsByClassName("title-Text")[0];
+let inputNum: any = document.getElementsByClassName("input-Num")[0];
+console.log(inputNum.value);
 
+// our gelobal varibales
 let textEl: string = `WE LOVE PROGRAMMING`;
 let speed = 100;
 let index = 0;
 let isReversing = false;
 
+// our functions
 const writeText = () => {
   if (!isReversing) {
     titleText.innerText = textEl.slice(0, index);
@@ -28,3 +33,5 @@ const writeText = () => {
 };
 
 writeText();
+
+// our event linsters
