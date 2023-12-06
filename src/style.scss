@@ -29,4 +29,13 @@ body {
       font-family: $fontOne;
     }
   }
+
+  .input-Num {
+    width: 30px;
+    border-radius: 50px;
+    border: none;
+    padding: 5px;
+    margin: 5px;
+    outline: none;
+  }
 }
