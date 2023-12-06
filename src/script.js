@@ -1,7 +1,6 @@
 // our selected elements
 var titleText = document.getElementsByClassName("title-Text")[0];
 var inputNum = document.getElementsByClassName("input-Num")[0];
-console.log(inputNum.value);
 // our gelobal varibales
 var textEl = "WE LOVE PROGRAMMING";
 var speed = 100;
@@ -27,5 +26,12 @@ var writeText = function () {
     }
     setTimeout(writeText, speed);
 };
-writeText();
 // our event linsters
+inputNum.addEventListener("change", function (e) {
+    var newSpeed = 0;
+    console.log(newSpeed);
+    console.log(e.target.value);
+    newSpeed = e.target.value;
+    speed = newSpeed * 100;
+});
+writeText();

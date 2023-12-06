@@ -1,11 +1,10 @@
 // our selected elements
 let titleText: any = document.getElementsByClassName("title-Text")[0];
-let inputNum: any = document.getElementsByClassName("input-Num")[0];
-console.log(inputNum.value);
+let inputNum = document.getElementsByClassName("input-Num")[0];
 
 // our gelobal varibales
 let textEl: string = `WE LOVE PROGRAMMING`;
-let speed = 100;
+var speed: any = 100;
 let index = 0;
 let isReversing = false;
 
@@ -28,10 +27,16 @@ const writeText = () => {
       index = 0;
     }
   }
-
   setTimeout(writeText, speed);
 };
 
-writeText();
-
 // our event linsters
+inputNum.addEventListener("change", (e: any) => {
+  let newSpeed = 0;
+  console.log(newSpeed);
+  console.log(e.target.value);
+  newSpeed = e.target.value;
+  speed = newSpeed * 100;
+});
+
+writeText();
