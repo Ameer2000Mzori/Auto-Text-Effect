@@ -4,3 +4,26 @@ body {
   padding: 0;
   margin: 0;
 }
+
+.header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: aquamarine;
+}
+
+.header .head-Wrap {
+  padding: 5px;
+  margin: 5px;
+  background-color: whitesmoke;
+  border-radius: 15px;
+}
+
+.header .head-Wrap .title-Text {
+  font-size: 30px;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+}
